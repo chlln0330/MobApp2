@@ -10,6 +10,7 @@ import android.widget.Chronometer;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText e1,e2,e3;
     Button b1, b2;
     TextView t1,t2;
-    Drawable d1,d2,d3,d4,d5;
+    ImageView d1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.button10);
         t1 = (TextView) findViewById(R.id.textView6);
         t2 = (TextView) findViewById(R.id.textView8);
-        d1 = (Drawable) findViewById(R.id.);
+        d1 = (ImageView) findViewById(R.id.imageView);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +73,21 @@ public class MainActivity extends AppCompatActivity {
                 t2.setText(Integer.toString(average)+"점");
 
                 if (average >= 90){
-                    d1.setVisible()
+                    d1.setImageResource(R.drawable.aicon);
                 }
-                else {
-
+                else if (average >= 80){
+                    d1.setImageResource(R.drawable.bicon);
                 }
+                else if (average >= 80){
+                    d1.setImageResource(R.drawable.cicon);
+                }
+                else if (average >= 80){
+                    d1.setImageResource(R.drawable.dicon);
+                }
+                else{
+                    d1.setImageResource(R.drawable.ficon);
+                }
+                d1.setVisibility(View.VISIBLE);
             }
         });
 
@@ -88,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 e3.setText("");
                 t1.setText("0점");
                 t2.setText("0점");
+
+                d1.setVisibility(View.INVISIBLE);
 
                 Toast.makeText(getApplicationContext(),"초기화 되었습니다.",Toast.LENGTH_SHORT).show();
             }

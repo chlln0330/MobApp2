@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         DatePicker date;
         TimePicker time;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parctice);
+        setContentView(R.layout.hwreal);
         init();
     }
 
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 int total = Integer.parseInt(korean) + Integer.parseInt(mathmatics) + Integer.parseInt(english);
                 int average = total / 3;
 
-                t1.setText(Integer.toString(total)+"점");
-                t2.setText(Integer.toString(average)+"점");
+                t1.setText(total+"점");
+                t2.setText(average+"점");
 
                 if (average >= 90){
                     d1.setImageResource(R.drawable.aicon);
@@ -78,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
                 else if (average >= 80){
                     d1.setImageResource(R.drawable.bicon);
                 }
-                else if (average >= 80){
+                else if (average >= 70){
                     d1.setImageResource(R.drawable.cicon);
                 }
-                else if (average >= 80){
+                else if (average >= 60){
                     d1.setImageResource(R.drawable.dicon);
                 }
                 else{

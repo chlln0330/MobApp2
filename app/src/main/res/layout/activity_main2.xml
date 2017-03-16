@@ -107,6 +107,7 @@
 
             <TextView
                 android:id="@+id/textView16"
+                android:padding="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="예약 결과는 다음과 같습니다." />
